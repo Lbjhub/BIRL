@@ -492,7 +492,7 @@ def draw_matrix_user_ranking(df_stat, higher_better=False, fig=None, cmap='tab20
     ranking = compute_matrix_user_ranking(df_stat, higher_better)
 
     if fig is None:
-        fig, _ = plt.subplots(figsize=np.array(df_stat.as_matrix().shape[::-1]) * 0.35)
+        fig, _ = plt.subplots(figsize=np.array(df_stat.values().shape[::-1]) * 0.35)
     ax = fig.gca()
     arange = np.linspace(-0.5, len(df_stat) - 0.5, len(df_stat) + 1)
     norm = plt_colors.BoundaryNorm(arange, len(df_stat))
